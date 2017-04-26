@@ -1,0 +1,119 @@
+<svg height="1854" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="1854" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">68 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ grommet@1.3.4 </tspan>
+<tspan x="10" y="90">  ├── classnames@2.2.5 </tspan>
+<tspan x="10" y="106">  ├─┬ deep-assign@2.0.0 </tspan>
+<tspan x="10" y="122">  │ └── is-obj@1.0.1 </tspan>
+<tspan x="10" y="138">  ├── hammerjs@2.0.8 </tspan>
+<tspan x="10" y="154">  ├── intl@1.2.5 </tspan>
+<tspan x="10" y="170">  ├── inuit-defaults@0.2.3 </tspan>
+<tspan x="10" y="186">  ├── inuit-functions@0.2.0 </tspan>
+<tspan x="10" y="202">  ├── inuit-mixins@0.2.3 </tspan>
+<tspan x="10" y="218">  ├── inuit-normalize@4.1.1 </tspan>
+<tspan x="10" y="234">  ├── inuit-reset@0.1.1 </tspan>
+<tspan x="10" y="250">  ├── inuit-responsive-settings@0.1.5 </tspan>
+<tspan x="10" y="266">  ├── inuit-responsive-tools@0.1.3 </tspan>
+<tspan x="10" y="282">  ├── inuit-shared@0.1.5 </tspan>
+<tspan x="10" y="298">  ├── lodash.zip@4.2.0 </tspan>
+<tspan x="10" y="314">  ├─┬ markdown-to-jsx@5.2.0 </tspan>
+<tspan x="10" y="330">  │ ├── lodash.get@4.4.2 </tspan>
+<tspan x="10" y="346">  │ ├── prop-types@15.5.8 </tspan>
+<tspan x="10" y="362">  │ ├─┬ remark-parse@3.0.0 </tspan>
+<tspan x="10" y="378">  │ │ ├── collapse-white-space@1.0.2 </tspan>
+<tspan x="10" y="394">  │ │ ├─┬ has@1.0.1 </tspan>
+<tspan x="10" y="410">  │ │ │ └── function-bind@1.1.0 </tspan>
+<tspan x="10" y="426">  │ │ ├── is-alphabetical@1.0.0 </tspan>
+<tspan x="10" y="442">  │ │ ├── is-decimal@1.0.0 </tspan>
+<tspan x="10" y="458">  │ │ ├── is-whitespace-character@1.0.0 </tspan>
+<tspan x="10" y="474">  │ │ ├── is-word-character@1.0.0 </tspan>
+<tspan x="10" y="490">  │ │ ├── markdown-escapes@1.0.0 </tspan>
+<tspan x="10" y="506">  │ │ ├─┬ parse-entities@1.1.0 </tspan>
+<tspan x="10" y="522">  │ │ │ ├── character-entities@1.2.0 </tspan>
+<tspan x="10" y="538">  │ │ │ ├── character-entities-legacy@1.1.0 </tspan>
+<tspan x="10" y="554">  │ │ │ ├── character-reference-invalid@1.1.0 </tspan>
+<tspan x="10" y="570">  │ │ │ ├── is-alphanumerical@1.0.0 </tspan>
+<tspan x="10" y="586">  │ │ │ └── is-hexadecimal@1.0.0 </tspan>
+<tspan x="10" y="602">  │ │ ├── repeat-string@1.6.1 </tspan>
+<tspan x="10" y="618">  │ │ ├── state-toggle@1.0.0 </tspan>
+<tspan x="10" y="634">  │ │ ├── trim@0.0.1 </tspan>
+<tspan x="10" y="650">  │ │ ├── trim-trailing-lines@1.1.0 </tspan>
+<tspan x="10" y="666">  │ │ ├── unherit@1.1.0 </tspan>
+<tspan x="10" y="682">  │ │ ├─┬ unist-util-remove-position@1.1.0 </tspan>
+<tspan x="10" y="698">  │ │ │ └── unist-util-visit@1.1.1 </tspan>
+<tspan x="10" y="714">  │ │ ├── vfile-location@2.0.1 </tspan>
+<tspan x="10" y="730">  │ │ └── xtend@4.0.1 </tspan>
+<tspan x="10" y="746">  │ └─┬ unified@6.1.2 </tspan>
+<tspan x="10" y="762">  │   ├── bail@1.0.1 </tspan>
+<tspan x="10" y="778">  │   ├── is-plain-obj@1.1.0 </tspan>
+<tspan x="10" y="794">  │   ├── isarray@2.0.1 </tspan>
+<tspan x="10" y="810">  │   ├── trough@1.0.0 </tspan>
+<tspan x="10" y="826">  │   ├─┬ vfile@2.0.1 </tspan>
+<tspan x="10" y="842">  │   │ ├── is-buffer@1.1.5 </tspan>
+<tspan x="10" y="858">  │   │ ├── replace-ext@1.0.0 </tspan>
+<tspan x="10" y="874">  │   │ └── unist-util-stringify-position@1.1.0 </tspan>
+<tspan x="10" y="890">  │   ├── x-is-function@1.0.4 </tspan>
+<tspan x="10" y="906">  │   └── x-is-string@0.1.0 </tspan>
+<tspan x="10" y="922">  ├── moment@2.18.1 </tspan>
+<tspan x="10" y="938">  ├─┬ react@15.5.4 </tspan>
+<tspan x="10" y="954">  │ ├─┬ fbjs@0.8.12 </tspan>
+<tspan x="10" y="970">  │ │ ├── core-js@1.2.7 </tspan>
+<tspan x="10" y="986">  │ │ ├─┬ isomorphic-fetch@2.2.1 </tspan>
+<tspan x="10" y="1002">  │ │ │ ├─┬ node-fetch@1.6.3 </tspan>
+<tspan x="10" y="1018">  │ │ │ │ ├─┬ encoding@0.1.12 </tspan>
+<tspan x="10" y="1034">  │ │ │ │ │ └── iconv-lite@0.4.16 </tspan>
+<tspan x="10" y="1050">  │ │ │ │ └── is-stream@1.1.0 </tspan>
+<tspan x="10" y="1066">  │ │ │ └── whatwg-fetch@2.0.3 </tspan>
+<tspan x="10" y="1082">  │ │ ├─┬ promise@7.1.1 </tspan>
+<tspan x="10" y="1098">  │ │ │ └── asap@2.0.5 </tspan>
+<tspan x="10" y="1114">  │ │ ├── setimmediate@1.0.5 </tspan>
+<tspan x="10" y="1130">  │ │ └── ua-parser-js@0.7.12 </tspan>
+<tspan x="10" y="1146">  │ ├─┬ loose-envify@1.3.1 </tspan>
+<tspan x="10" y="1162">  │ │ └── js-tokens@3.0.1 </tspan>
+<tspan x="10" y="1178">  │ └── object-assign@4.1.1 </tspan>
+<tspan x="10" y="1194">  ├── react-addons-transition-group@15.5.2 </tspan>
+<tspan x="10" y="1210">  ├── react-desc@1.1.0 </tspan>
+<tspan x="10" y="1226">  ├── react-dom@15.5.4 </tspan>
+<tspan x="10" y="1242">  ├─┬ react-intl@2.2.3 </tspan>
+<tspan x="10" y="1258">  │ ├── intl-format-cache@2.0.5 </tspan>
+<tspan x="10" y="1274">  │ ├─┬ intl-messageformat@1.3.0 </tspan>
+<tspan x="10" y="1290">  │ │ └── intl-messageformat-parser@1.2.0 </tspan>
+<tspan x="10" y="1306">  │ ├── intl-relativeformat@1.3.0 </tspan>
+<tspan x="10" y="1322">  │ └── invariant@2.2.2 </tspan>
+<tspan x="10" y="1338">  ├─┬ react-router@4.1.1 </tspan>
+<tspan x="10" y="1354">  │ ├─┬ history@4.6.1 </tspan>
+<tspan x="10" y="1370">  │ │ ├── resolve-pathname@2.1.0 </tspan>
+<tspan x="10" y="1386">  │ │ └── value-equal@0.2.1 </tspan>
+<tspan x="10" y="1402">  │ ├── hoist-non-react-statics@1.2.0 </tspan>
+<tspan x="10" y="1418">  │ ├─┬ path-to-regexp@1.7.0 </tspan>
+<tspan x="10" y="1434">  │ │ └── isarray@0.0.1 </tspan>
+<tspan x="10" y="1450">  │ └── warning@3.0.0 </tspan>
+<tspan x="10" y="1466">  └─┬ superagent@3.5.2 </tspan>
+<tspan x="10" y="1482">    ├── component-emitter@1.2.1 </tspan>
+<tspan x="10" y="1498">    ├── cookiejar@2.1.1 </tspan>
+<tspan x="10" y="1514">    ├─┬ debug@2.6.4 </tspan>
+<tspan x="10" y="1530">    │ └── ms@0.7.3 </tspan>
+<tspan x="10" y="1546">    ├── extend@3.0.0 </tspan>
+<tspan x="10" y="1562">    ├─┬ form-data@2.1.4 </tspan>
+<tspan x="10" y="1578">    │ ├── asynckit@0.4.0 </tspan>
+<tspan x="10" y="1594">    │ ├─┬ combined-stream@1.0.5 </tspan>
+<tspan x="10" y="1610">    │ │ └── delayed-stream@1.0.0 </tspan>
+<tspan x="10" y="1626">    │ └─┬ mime-types@2.1.15 </tspan>
+<tspan x="10" y="1642">    │   └── mime-db@1.27.0 </tspan>
+<tspan x="10" y="1658">    ├── formidable@1.1.1 </tspan>
+<tspan x="10" y="1674">    ├── methods@1.1.2 </tspan>
+<tspan x="10" y="1690">    ├── mime@1.3.4 </tspan>
+<tspan x="10" y="1706">    ├── qs@6.4.0 </tspan>
+<tspan x="10" y="1722">    └─┬ readable-stream@2.2.9 </tspan>
+<tspan x="10" y="1738">      ├── buffer-shims@1.0.0 </tspan>
+<tspan x="10" y="1754">      ├── core-util-is@1.0.2 </tspan>
+<tspan x="10" y="1770">      ├── inherits@2.0.3 </tspan>
+<tspan x="10" y="1786">      ├── isarray@1.0.0 </tspan>
+<tspan x="10" y="1802">      ├── process-nextick-args@1.0.7 </tspan>
+<tspan x="10" y="1818">      ├── string_decoder@1.0.0 </tspan>
+<tspan x="10" y="1834">      └── util-deprecate@1.0.2</tspan>
+</text>
+</svg>

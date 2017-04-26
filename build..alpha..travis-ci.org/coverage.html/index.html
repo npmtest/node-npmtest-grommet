@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for All files</title>
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            margin:0; padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica;
+            font-size: 10pt;
+        }
+        div.header, div.footer {
+            background: #eee;
+            padding: 1em;
+        }
+        div.header {
+            height: 160px;
+            padding: 0 1em 0 1em;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid #666;
+            width: 100%;
+        }
+        div.footer {
+            border-top: 1px solid #666;
+        }
+        div.body {
+            margin-top: 170px;
+        }
+        div.meta {
+            font-size: 90%;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 12pt;
+        }
+        h2 {
+            font-size: 10pt;
+        }
+        pre {
+            font-family: Menlo, Monaco, Consolas, Courier New, monospace;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            tab-size: 2;
+        }
+
+        div.path { font-size: 110%; }
+        div.path a:link, div.path a:visited { color: #000; }
+        table.coverage { border-collapse: collapse; margin:0; padding: 0 }
+
+        table.coverage td {
+            margin: 0;
+            padding: 0;
+            color: #111;
+            vertical-align: top;
+        }
+        table.coverage td.line-count {
+            width: 50px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        table.coverage td.line-coverage {
+            color: #777 !important;
+            text-align: right;
+            border-left: 1px solid #666;
+            border-right: 1px solid #666;
+        }
+
+        table.coverage td.text {
+        }
+
+        table.coverage td span.cline-any {
+            display: inline-block;
+            padding: 0 5px;
+            width: 40px;
+        }
+        table.coverage td span.cline-neutral {
+            background: #eee;
+        }
+        table.coverage td span.cline-yes {
+            background: #b5d592;
+            color: #999;
+        }
+        table.coverage td span.cline-no {
+            background: #fc8c84;
+        }
+
+        .cstat-yes { color: #111; }
+        .cstat-no { background: #fc8c84; color: #111; }
+        .fstat-no { background: #ffc520; color: #111 !important; }
+        .cbranch-no { background:  yellow !important; color: #111; }
+
+        .cstat-skip { background: #ddd; color: #111; }
+        .fstat-skip { background: #ddd; color: #111 !important; }
+        .cbranch-skip { background: #ddd !important; color: #111; }
+
+        .missing-if-branch {
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: black;
+            color: yellow;
+        }
+
+        .skip-if-branch {
+            display: none;
+            margin-right: 10px;
+            position: relative;
+            padding: 0 4px;
+            background: #ccc;
+            color: white;
+        }
+
+        .missing-if-branch .typ, .skip-if-branch .typ {
+            color: inherit !important;
+        }
+
+        .entity, .metric { font-weight: bold; }
+        .metric { display: inline-block; border: 1px solid #333; padding: 0.3em; background: white; }
+        .metric small { font-size: 80%; font-weight: normal; color: #666; }
+
+        div.coverage-summary table { border-collapse: collapse; margin: 3em; font-size: 110%; }
+        div.coverage-summary td, div.coverage-summary table  th { margin: 0; padding: 0.25em 1em; border-top: 1px solid #666; border-bottom: 1px solid #666; }
+        div.coverage-summary th { text-align: left; border: 1px solid #666; background: #eee; font-weight: normal; }
+        div.coverage-summary th.file { border-right: none !important; }
+        div.coverage-summary th.pic { border-left: none !important; text-align: right; }
+        div.coverage-summary th.pct { border-right: none !important; }
+        div.coverage-summary th.abs { border-left: none !important; text-align: right; }
+        div.coverage-summary td.pct { text-align: right; border-left: 1px solid #666; }
+        div.coverage-summary td.abs { text-align: right; font-size: 90%; color: #444; border-right: 1px solid #666; }
+        div.coverage-summary td.file { text-align: right; border-left: 1px solid #666; white-space: nowrap;  }
+        div.coverage-summary td.pic { min-width: 120px !important;  }
+        div.coverage-summary a:link { color: #000; }
+        div.coverage-summary a:visited { color: #333; }
+        div.coverage-summary tfoot td { border-top: 1px solid #666; }
+
+        div.coverage-summary .yui3-datatable-sort-indicator, div.coverage-summary .dummy-sort-indicator {
+            height: 10px;
+            width: 7px;
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+        div.coverage-summary .yui3-datatable-sort-indicator {
+            background: no-repeat scroll 0 0 transparent;
+        }
+        div.coverage-summary .yui3-datatable-sorted .yui3-datatable-sort-indicator {
+            background-position: 0 -20px;
+        }
+        div.coverage-summary .yui3-datatable-sorted-desc .yui3-datatable-sort-indicator {
+            background-position: 0 -10px;
+        }
+
+        .high { background: #b5d592 !important; }
+        .medium { background: #ffe87c !important; }
+        .low { background: #fc8c84 !important; }
+
+        span.cover-fill, span.cover-empty {
+            display:inline-block;
+            border:1px solid #444;
+            background: white;
+            height: 12px;
+        }
+        span.cover-fill {
+            background: #ccc;
+            border-right: 1px solid #444;
+        }
+        span.cover-empty {
+            background: white;
+            border-left: none;
+        }
+        span.cover-full {
+            border-right: none !important;
+        }
+        pre.prettyprint {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .com { color: #999 !important; }
+        .ignore-none { color: #999; font-weight: normal; }
+
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1 style="font-weight: bold;">
+        <a href="https://github.com/npmtest/node-npmtest-grommet">npmtest-grommet (v0.0.1)</a>
+    </h1>
+    <h1>Code coverage report for <span class="entity">All files</span></h1>
+    <h2>
+        
+        Statements: <span class="metric">59.8% <small>(32821 / 54889)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Branches: <span class="metric">34.39% <small>(9822 / 28564)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Functions: <span class="metric">47.74% <small>(4259 / 8921)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        Lines: <span class="metric">65.77% <small>(22009 / 33465)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        
+        Ignored: <span class="metric">26 statements, 1 function, 30 branches</span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"></div>
+</div>
+<div class="body">
+<div class="coverage-summary">
+<table>
+<thead>
+<tr>
+   <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>
+   <th data-col="pic" data-type="number" data-fmt="html" data-html="true" class="pic"></th>
+   <th data-col="statements" data-type="number" data-fmt="pct" class="pct">Statements</th>
+   <th data-col="statements_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="branches" data-type="number" data-fmt="pct" class="pct">Branches</th>
+   <th data-col="branches_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="functions" data-type="number" data-fmt="pct" class="pct">Functions</th>
+   <th data-col="functions_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="lines" data-type="number" data-fmt="pct" class="pct">Lines</th>
+   <th data-col="lines_raw" data-type="number" data-fmt="html" class="abs"></th>
+</tr>
+</thead>
+<tbody><tr>
+	<td class="file high" data-value="node-npmtest-grommet/"><a href="node-npmtest-grommet/index.html">node-npmtest-grommet/</a></td>
+	<td data-value="100" class="pic high"><span class="cover-fill cover-full" style="width: 100px;"></span><span class="cover-empty" style="width:0px;"></span></td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="153" class="abs high">(153&nbsp;/&nbsp;153)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="126" class="abs high">(126&nbsp;/&nbsp;126)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="28" class="abs high">(28&nbsp;/&nbsp;28)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="153" class="abs high">(153&nbsp;/&nbsp;153)</td>
+	</tr>
+
+<tr>
+	<td class="file high" data-value="node-npmtest-grommet/node_modules/grommet/"><a href="node-npmtest-grommet/node_modules/grommet/index.html">node-npmtest-grommet/node_modules/grommet/</a></td>
+	<td data-value="96.9" class="pic high"><span class="cover-fill" style="width: 96px;"></span><span class="cover-empty" style="width:4px;"></span></td>
+	<td data-value="96.9" class="pct high">96.9%</td>
+	<td data-value="258" class="abs high">(250&nbsp;/&nbsp;258)</td>
+	<td data-value="68.75" class="pct medium">68.75%</td>
+	<td data-value="16" class="abs medium">(11&nbsp;/&nbsp;16)</td>
+	<td data-value="98.78" class="pct high">98.78%</td>
+	<td data-value="82" class="abs high">(81&nbsp;/&nbsp;82)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="249" class="abs high">(249&nbsp;/&nbsp;249)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-grommet/node_modules/grommet/components/"><a href="node-npmtest-grommet/node_modules/grommet/components/index.html">node-npmtest-grommet/node_modules/grommet/components/</a></td>
+	<td data-value="36.55" class="pic low"><span class="cover-fill" style="width: 36px;"></span><span class="cover-empty" style="width:64px;"></span></td>
+	<td data-value="36.55" class="pct low">36.55%</td>
+	<td data-value="9904" class="abs low">(3620&nbsp;/&nbsp;9904)</td>
+	<td data-value="20.08" class="pct low">20.08%</td>
+	<td data-value="5587" class="abs low">(1122&nbsp;/&nbsp;5587)</td>
+	<td data-value="25.78" class="pct low">25.78%</td>
+	<td data-value="1633" class="abs low">(421&nbsp;/&nbsp;1633)</td>
+	<td data-value="33.09" class="pct low">33.09%</td>
+	<td data-value="7226" class="abs low">(2391&nbsp;/&nbsp;7226)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-grommet/node_modules/grommet/components/chart/"><a href="node-npmtest-grommet/node_modules/grommet/components/chart/index.html">node-npmtest-grommet/node_modules/grommet/components/chart/</a></td>
+	<td data-value="41.95" class="pic low"><span class="cover-fill" style="width: 41px;"></span><span class="cover-empty" style="width:59px;"></span></td>
+	<td data-value="41.95" class="pct low">41.95%</td>
+	<td data-value="1521" class="abs low">(638&nbsp;/&nbsp;1521)</td>
+	<td data-value="22.77" class="pct low">22.77%</td>
+	<td data-value="887" class="abs low">(202&nbsp;/&nbsp;887)</td>
+	<td data-value="35.37" class="pct low">35.37%</td>
+	<td data-value="246" class="abs low">(87&nbsp;/&nbsp;246)</td>
+	<td data-value="41.67" class="pct low">41.67%</td>
+	<td data-value="1027" class="abs low">(428&nbsp;/&nbsp;1027)</td>
+	</tr>
+
+<tr>
+	<td class="file medium" data-value="node-npmtest-grommet/node_modules/grommet/components/icons/"><a href="node-npmtest-grommet/node_modules/grommet/components/icons/index.html">node-npmtest-grommet/node_modules/grommet/components/icons/</a></td>
+	<td data-value="63.24" class="pic medium"><span class="cover-fill" style="width: 63px;"></span><span class="cover-empty" style="width:37px;"></span></td>
+	<td data-value="63.24" class="pct medium">63.24%</td>
+	<td data-value="340" class="abs medium">(215&nbsp;/&nbsp;340)</td>
+	<td data-value="37.5" class="pct low">37.5%</td>
+	<td data-value="184" class="abs low">(69&nbsp;/&nbsp;184)</td>
+	<td data-value="55.36" class="pct medium">55.36%</td>
+	<td data-value="56" class="abs medium">(31&nbsp;/&nbsp;56)</td>
+	<td data-value="77.17" class="pct medium">77.17%</td>
+	<td data-value="184" class="abs medium">(142&nbsp;/&nbsp;184)</td>
+	</tr>
+
+<tr>
+	<td class="file medium" data-value="node-npmtest-grommet/node_modules/grommet/components/icons/base/"><a href="node-npmtest-grommet/node_modules/grommet/components/icons/base/index.html">node-npmtest-grommet/node_modules/grommet/components/icons/base/</a></td>
+	<td data-value="66.67" class="pic medium"><span class="cover-fill" style="width: 66px;"></span><span class="cover-empty" style="width:34px;"></span></td>
+	<td data-value="66.67" class="pct medium">66.67%</td>
+	<td data-value="40179" class="abs medium">(26787&nbsp;/&nbsp;40179)</td>
+	<td data-value="39.03" class="pct low">39.03%</td>
+	<td data-value="20340" class="abs low">(7939&nbsp;/&nbsp;20340)</td>
+	<td data-value="53.85" class="pct medium">53.85%</td>
+	<td data-value="6449" class="abs medium">(3473&nbsp;/&nbsp;6449)</td>
+	<td data-value="78.26" class="pct medium">78.26%</td>
+	<td data-value="22818" class="abs medium">(17858&nbsp;/&nbsp;22818)</td>
+	</tr>
+
+<tr>
+	<td class="file medium" data-value="node-npmtest-grommet/node_modules/grommet/components/icons/status/"><a href="node-npmtest-grommet/node_modules/grommet/components/icons/status/index.html">node-npmtest-grommet/node_modules/grommet/components/icons/status/</a></td>
+	<td data-value="61.91" class="pic medium"><span class="cover-fill" style="width: 61px;"></span><span class="cover-empty" style="width:39px;"></span></td>
+	<td data-value="61.91" class="pct medium">61.91%</td>
+	<td data-value="491" class="abs medium">(304&nbsp;/&nbsp;491)</td>
+	<td data-value="39.02" class="pct low">39.02%</td>
+	<td data-value="287" class="abs low">(112&nbsp;/&nbsp;287)</td>
+	<td data-value="50" class="pct medium">50%</td>
+	<td data-value="84" class="abs medium">(42&nbsp;/&nbsp;84)</td>
+	<td data-value="81.65" class="pct high">81.65%</td>
+	<td data-value="218" class="abs high">(178&nbsp;/&nbsp;218)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-grommet/node_modules/grommet/components/meter/"><a href="node-npmtest-grommet/node_modules/grommet/components/meter/index.html">node-npmtest-grommet/node_modules/grommet/components/meter/</a></td>
+	<td data-value="44.79" class="pic low"><span class="cover-fill" style="width: 44px;"></span><span class="cover-empty" style="width:56px;"></span></td>
+	<td data-value="44.79" class="pct low">44.79%</td>
+	<td data-value="547" class="abs low">(245&nbsp;/&nbsp;547)</td>
+	<td data-value="29.52" class="pct low">29.52%</td>
+	<td data-value="271" class="abs low">(80&nbsp;/&nbsp;271)</td>
+	<td data-value="32.29" class="pct low">32.29%</td>
+	<td data-value="96" class="abs low">(31&nbsp;/&nbsp;96)</td>
+	<td data-value="38.99" class="pct low">38.99%</td>
+	<td data-value="395" class="abs low">(154&nbsp;/&nbsp;395)</td>
+	</tr>
+
+<tr>
+	<td class="file medium" data-value="node-npmtest-grommet/node_modules/grommet/components/video/"><a href="node-npmtest-grommet/node_modules/grommet/components/video/index.html">node-npmtest-grommet/node_modules/grommet/components/video/</a></td>
+	<td data-value="66.86" class="pic medium"><span class="cover-fill" style="width: 66px;"></span><span class="cover-empty" style="width:34px;"></span></td>
+	<td data-value="66.86" class="pct medium">66.86%</td>
+	<td data-value="513" class="abs medium">(343&nbsp;/&nbsp;513)</td>
+	<td data-value="36.43" class="pct low">36.43%</td>
+	<td data-value="291" class="abs low">(106&nbsp;/&nbsp;291)</td>
+	<td data-value="46.15" class="pct low">46.15%</td>
+	<td data-value="91" class="abs low">(42&nbsp;/&nbsp;91)</td>
+	<td data-value="68.67" class="pct medium">68.67%</td>
+	<td data-value="316" class="abs medium">(217&nbsp;/&nbsp;316)</td>
+	</tr>
+
+<tr>
+	<td class="file medium" data-value="node-npmtest-grommet/node_modules/grommet/messages/"><a href="node-npmtest-grommet/node_modules/grommet/messages/index.html">node-npmtest-grommet/node_modules/grommet/messages/</a></td>
+	<td data-value="67.82" class="pic medium"><span class="cover-fill" style="width: 67px;"></span><span class="cover-empty" style="width:33px;"></span></td>
+	<td data-value="67.82" class="pct medium">67.82%</td>
+	<td data-value="87" class="abs medium">(59&nbsp;/&nbsp;87)</td>
+	<td data-value="58.33" class="pct medium">58.33%</td>
+	<td data-value="48" class="abs medium">(28&nbsp;/&nbsp;48)</td>
+	<td data-value="75" class="pct medium">75%</td>
+	<td data-value="16" class="abs medium">(12&nbsp;/&nbsp;16)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="55" class="abs high">(55&nbsp;/&nbsp;55)</td>
+	</tr>
+
+<tr>
+	<td class="file high" data-value="node-npmtest-grommet/node_modules/grommet/messages/icons/"><a href="node-npmtest-grommet/node_modules/grommet/messages/icons/index.html">node-npmtest-grommet/node_modules/grommet/messages/icons/</a></td>
+	<td data-value="100" class="pic high"><span class="cover-fill cover-full" style="width: 100px;"></span><span class="cover-empty" style="width:0px;"></span></td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="6" class="abs high">(6&nbsp;/&nbsp;6)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="0" class="abs high">(0&nbsp;/&nbsp;0)</td>
+	<td data-value="100" class="pct high">100%</td>
+	<td data-value="6" class="abs high">(6&nbsp;/&nbsp;6)</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="node-npmtest-grommet/node_modules/grommet/utils/"><a href="node-npmtest-grommet/node_modules/grommet/utils/index.html">node-npmtest-grommet/node_modules/grommet/utils/</a></td>
+	<td data-value="22.58" class="pic low"><span class="cover-fill" style="width: 22px;"></span><span class="cover-empty" style="width:78px;"></span></td>
+	<td data-value="22.58" class="pct low">22.58%</td>
+	<td data-value="890" class="abs low">(201&nbsp;/&nbsp;890)</td>
+	<td data-value="5.12" class="pct low">5.12%</td>
+	<td data-value="527" class="abs low">(27&nbsp;/&nbsp;527)</td>
+	<td data-value="7.86" class="pct low">7.86%</td>
+	<td data-value="140" class="abs low">(11&nbsp;/&nbsp;140)</td>
+	<td data-value="21.76" class="pct low">21.76%</td>
+	<td data-value="818" class="abs low">(178&nbsp;/&nbsp;818)</td>
+	</tr>
+
+</tbody>
+</table>
+</div></div>
+<div class="footer">
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 26 2017 07:27:45 GMT+0000 (UTC)</div>
+</div>
+</body>
+</html>
