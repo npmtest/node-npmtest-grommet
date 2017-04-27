@@ -19,7 +19,7 @@
 <tspan x="10" y="266">  ├── inuit-responsive-tools@0.1.3 </tspan>
 <tspan x="10" y="282">  ├── inuit-shared@0.1.5 </tspan>
 <tspan x="10" y="298">  ├── lodash.zip@4.2.0 </tspan>
-<tspan x="10" y="314">  ├─┬ markdown-to-jsx@5.2.0 </tspan>
+<tspan x="10" y="314">  ├─┬ markdown-to-jsx@5.3.2 </tspan>
 <tspan x="10" y="330">  │ ├── lodash.get@4.4.2 </tspan>
 <tspan x="10" y="346">  │ ├── prop-types@15.5.8 </tspan>
 <tspan x="10" y="362">  │ ├─┬ remark-parse@3.0.0 </tspan>
@@ -94,7 +94,7 @@
 <tspan x="10" y="1466">  └─┬ superagent@3.5.2 </tspan>
 <tspan x="10" y="1482">    ├── component-emitter@1.2.1 </tspan>
 <tspan x="10" y="1498">    ├── cookiejar@2.1.1 </tspan>
-<tspan x="10" y="1514">    ├─┬ debug@2.6.4 </tspan>
+<tspan x="10" y="1514">    ├─┬ debug@2.6.5 </tspan>
 <tspan x="10" y="1530">    │ └── ms@0.7.3 </tspan>
 <tspan x="10" y="1546">    ├── extend@3.0.0 </tspan>
 <tspan x="10" y="1562">    ├─┬ form-data@2.1.4 </tspan>
